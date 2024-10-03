@@ -3,7 +3,7 @@ import {SubMenuList} from "./SubMenuList";
 import styled from "styled-components";
 import { color1,color2, color3, color4, color5 } from "../Styles/colors";
 
-export const MenuItem = ({ link, name, subMenuItems }) => {
+export const MenuItem = ({ name,link,subMenuItems }) => {
     const MenuItemStyled = styled.li`
     position: relative;
     list-style: none;
@@ -11,6 +11,7 @@ export const MenuItem = ({ link, name, subMenuItems }) => {
 
     ul {
         display: none;
+
         position: absolute;
 
         width: 100%;

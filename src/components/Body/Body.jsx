@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Carousel } from "./Carousel/Carousel";
-import { BoxSlider } from "./BoxSliders/Slider";
+import { Slider } from "./BoxSliders/Slider";
+import JewelerySlider from "./BoxSliders/JewelerySlider";
+
+
 
 
 const Body = () => {
@@ -21,7 +24,7 @@ const Body = () => {
     return (
         <MyBody>
             <Carousel/>
-            <BoxSlider/>
+            <JewelerySlider/>
         </MyBody>
     )
 };

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+
 import {MenuItem} from "./MenuItem";
 import styled from "styled-components";
 import { color1, color2, color3, color4, color5 } from "../Styles/colors";
+import React, { useEffect, useState } from "react";
 import { xs, s, m, l, xl } from "../Styles/sizes";
-import {useApi} from "../hook/useApi";
+import { useApi } from "../hook/useApi";
 
 
 
@@ -42,28 +43,29 @@ li {
 
 const Menu = () => {
 
-    const { data, isDeleting } = useApi('/categories');
-    const[menuItems,setMenuItems]=useState([]);
-useEffect(()=>{
-    if(data){
-        setMenuItems(data)
-    }
-},[data])
 
+        const { data } = useApi('products/categories');
+        const[menuItems,setMenuItems]=useState([]);
+        useEffect(()=>{
+            if (data ) {
+                setMenuItems(data);
+                console.log('MenuItems actualizados:', menuItems);
+            }
+    },[data])
+    
 
     return (
     <MenuBox>
         {menuItems.map((menuItem, index) => (
         <MenuItem
             key={index}
-            name={menuItem.name}
-
+            name={menuItem}
         />
         
         ))}
         <MenuItem name={'All'} link={'#'}/>
         </MenuBox>
     );
-};
+}
 
 export default Menu;
